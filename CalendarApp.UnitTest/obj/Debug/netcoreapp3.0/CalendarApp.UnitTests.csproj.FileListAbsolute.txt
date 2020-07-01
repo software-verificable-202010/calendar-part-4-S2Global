@@ -1,0 +1,12 @@
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\NUnit3.TestAdapter.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\nunit.engine.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\nunit.engine.api.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\CalendarApp.UnitTests.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.TestPlatform.CoreUtilities.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.TestPlatform.CommunicationUtilities.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.TestPlatform.CrossPlatEngine.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.0\nunit.framework.dll
