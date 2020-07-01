@@ -53,24 +53,29 @@ namespace CalendarApp
             }
         }
 
-        public static void UpdateText(List<TextBlock> appointmentParameters, Appointment appointment)
+        public void UpdateText(List<TextBlock> appointmentParameters, Appointment appointment)
         {
             if (appointmentParameters != null && appointment != null)
             {
+                int titlePosition = 0;
+                int creatorPosition = 1;
+                int startDatePosition = 2;
+                int endDatePosition = 3;
+                int participantsPosition = 4;
+                int descriptionPosition = 5;
                 StringBuilder participantText = new StringBuilder();
-
-                appointmentParameters[0].Text = appointment.Title;
-                appointmentParameters[1].Text = appointment.Creator.Username;
-                appointmentParameters[2].Text = appointment.StartDate.ToString(CultureInfo.InvariantCulture);
-                appointmentParameters[3].Text = appointment.EndDate.ToString(CultureInfo.InvariantCulture);
+                appointmentParameters[titlePosition].Text = appointment.Title;
+                appointmentParameters[creatorPosition].Text = appointment.Creator.Username;
+                appointmentParameters[startDatePosition].Text = appointment.StartDate.ToString(CultureInfo.InvariantCulture);
+                appointmentParameters[endDatePosition].Text = appointment.EndDate.ToString(CultureInfo.InvariantCulture);
                 foreach (string participant in appointment.Participants)
                 {
                     string separator = " ";
                     participantText.Append(separator);
                     participantText.Append(participant);
                 }
-                appointmentParameters[4].Text = participantText.ToString();
-                appointmentParameters[5].Text = appointment.Description;
+                appointmentParameters[participantsPosition].Text = participantText.ToString();
+                appointmentParameters[descriptionPosition].Text = appointment.Description;
             }
         }
 

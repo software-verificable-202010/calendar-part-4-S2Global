@@ -46,7 +46,8 @@ namespace CalendarApp.UnitTests
             {
                 var users = JsonConvert.DeserializeObject<List<string>>(jsonUsers);
                 List<string> usersWithUsername = users.FindAll(user => user == username);
-                if (usersWithUsername.Count != 1)
+                int singleUser = 1;
+                if (usersWithUsername.Count != singleUser)
                 {
                     result = false;
                 }

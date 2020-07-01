@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace CalendarApp.UnitTest
+namespace CalendarApp.UnitTests
 {
     public class AppointmentTests
     {
@@ -25,7 +25,7 @@ namespace CalendarApp.UnitTest
         public void Setup()
         {
             testAppointmentFileName = "Appointments.json";
-            title = "Test Appointment try2";
+            title = "Test Appointment";
             description = "Appointment used for testing.";
             username = "TestUser";
             creator = new User(username);
