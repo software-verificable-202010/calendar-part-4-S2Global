@@ -26,7 +26,7 @@ namespace CalendarApp
 
         #region Properties
         public static DateTime CalendarDate { get; set; }
-        public static User SessionUser { get; set; }
+        public static string SessionUser { get; set; }
         public static bool SecondWindowIsOpen { get; set; }
 
         public static List<Appointment> GetSessionUserAppointments()
@@ -47,12 +47,16 @@ namespace CalendarApp
         #endregion
 
         #region Methods
-        public MainWindow(User user, bool secondWindowIsOpen)
+        public MainWindow(string user, bool secondWindowIsOpen)
+        {
+            SessionUser = user;
+            SecondWindowIsOpen = secondWindowIsOpen;
+        }
+
+        public void RunMainWindow()
         {
             InitializeComponent();
             CalendarDate = DateTime.Now;
-            SessionUser = user;
-            SecondWindowIsOpen = secondWindowIsOpen;
             secondWindow.IsEnabled = !SecondWindowIsOpen;
             UpdateCalendar();
             GoToWeek();
@@ -62,6 +66,7 @@ namespace CalendarApp
         {
             weekView.Close();
             MainWindow mainWindow = new MainWindow(SessionUser, SecondWindowIsOpen);
+            mainWindow.RunMainWindow();
             mainWindow.Show();
             this.Close();
         }
@@ -77,8 +82,8 @@ namespace CalendarApp
         public void UpdateCalendar()
         {
             MonthView.Children.Clear();
-            UpdateTitle();
-            UpdateWeekendRectangle();
+            MainTitle.Text = UpdateTitle(CalendarDate, SessionUser);
+            MonthView.Children.Add(UpdateWeekendRectangle());
             GetAppointments();
             UpdateDayNumbers();
             UpdateDayButtons();
@@ -100,7 +105,7 @@ namespace CalendarApp
             if (jsonAppointments != null)
             {
                 List<Appointment> allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
-                SetSessionUserAppointments(allAppointments.Where(x => x.Participants.Contains(SessionUser.Username)).ToList());
+                SetSessionUserAppointments(allAppointments.Where(x => x.Participants.Contains(SessionUser)).ToList());
             }
         }
 
@@ -118,7 +123,7 @@ namespace CalendarApp
             UpdateCalendar();
         }
 
-        private void GoToWeek()
+        private static void GoToWeek()
         {
             weekView = new WeekWindow();
             weekView.Show();
@@ -132,7 +137,8 @@ namespace CalendarApp
                 List<Appointment> appointments = button.Tag as List<Appointment>;
                 foreach (Appointment appointment in appointments)
                 {
-                    var AppointmentView = new AppointmentWindow(appointment);
+                    var AppointmentView = new AppointmentWindow();
+                    AppointmentView.UpdateAppointmentView(appointment);
                     AppointmentView.Show();
                 }
             }
@@ -144,7 +150,9 @@ namespace CalendarApp
             AppointmentFormView.Show();
         }
 
-        private void UpdateWeekendRectangle()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public Rectangle UpdateWeekendRectangle()
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             int weekendRowProperty = 0;
             int weekendColumnProperty = 5;
@@ -160,7 +168,7 @@ namespace CalendarApp
                 Color = Color.FromArgb(100, 127, 255, 212)
             };
             weekendHighlight.SetValue(Shape.FillProperty, rectangleColourFill);
-            MonthView.Children.Add(weekendHighlight);
+            return weekendHighlight;
         }
 
         private void UpdateDayNumbers()
@@ -253,18 +261,20 @@ namespace CalendarApp
             }
         }
 
-        private void UpdateTitle()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public string UpdateTitle(DateTime date, string username)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";
-            string userName = "User: ";
-            title.Append(CalendarDate.Month.ToString(CultureInfo.InvariantCulture));
+            string userNameField = "User: ";
+            title.Append(date.Month.ToString(CultureInfo.InvariantCulture));
             title.Append(separator);
-            title.Append(CalendarDate.Year);
+            title.Append(date.Year);
             title.Append(separator);
-            title.Append(userName);
-            title.Append(SessionUser.Username);
-            MainTitle.Text = title.ToString();
+            title.Append(userNameField);
+            title.Append(username);
+            return title.ToString();
         }
         #endregion
     }

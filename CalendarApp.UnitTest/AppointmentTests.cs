@@ -10,11 +10,9 @@ namespace CalendarApp.UnitTests
     public class AppointmentTests
     {
         #region Fields
-        private static string testAppointmentFileName;
         private static string title;
         private static string description;
-        private static string username;
-        private static User creator;
+        private static string creator;
         private Appointment appointment;
         private Appointment updatedAppointment;
         List<Appointment> allAppointments;
@@ -24,54 +22,38 @@ namespace CalendarApp.UnitTests
         [SetUp]
         public void Setup()
         {
-            testAppointmentFileName = "Appointments.json";
             title = "Test Appointment";
             description = "Appointment used for testing.";
-            username = "TestUser";
-            creator = new User(username);
+            creator = "TestUser";
             int duration = 2;
             DateTime startDate = DateTime.Now;
             DateTime endDate = startDate.AddHours(duration);
             List<string> participants = new List<string>()
             {
-                username
+                creator
             };
             appointment = new Appointment(title, description, startDate, endDate, creator, participants);
             string updatedTitle = "Updated Test Appointment";
             updatedAppointment = new Appointment(updatedTitle, description, startDate, endDate, creator, participants);
-            MainWindow.SessionUser = creator;
         }
 
         [Test]
-        public void SaveNewAppointment_AppointmentHasNoOverlap_AddAppointmentToJson()
+        public void Appointment_ValidConstrucor()
         {
             // Arrange
-            List<Appointment> allAppointments = null;
+            int duration = 2;
+            DateTime startDate = DateTime.Now;
+            DateTime endDate = startDate.AddHours(duration);
+            List<string> participants = new List<string>()
+            {
+                creator
+            };
 
             // Act
-            bool isSaved = appointment.SaveNewAppointment();
-            bool isPopulated = false;
-            string jsonAppointments = null;
-            try
-            {
-                jsonAppointments = File.ReadAllText(testAppointmentFileName);
-            }
-            catch (FileNotFoundException e)
-            {
-                Debug.Write(e);
-            }
-
-            if (jsonAppointments != null)
-            {
-                allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
-                isPopulated = true;
-            }
-            var apointments = allAppointments.Find(appointment => appointment.Title == title);
-            bool isFound = apointments != null;
-            bool result = isSaved && isFound && isPopulated;
+            appointment = new Appointment(title, description, startDate, endDate, creator, participants);
 
             // Assert
-            Assert.IsTrue(result);
+            Assert.IsNotNull(appointment);
         }
 
         [Test]
@@ -85,7 +67,6 @@ namespace CalendarApp.UnitTests
             string updatedUsername = "SecondTestUser";
             List<string> updatedParticipants = new List<string>()
             {
-                username,
                 updatedUsername
             };
 
@@ -97,48 +78,6 @@ namespace CalendarApp.UnitTests
             bool endDateResult = appointment.EndDate != updatedAppointment.EndDate;
             bool participantsResult = appointment.Participants != updatedAppointment.Participants;
             bool result = descriptionResult && startDateResult && endDateResult && participantsResult;
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void SaveUpdatedAppointment_SaveNewParameters_AddAppointmentToJson()
-        {
-            // Arrange
-            string updatedDescription = "Updated appointment used for testing.";
-            int updatedDuration = 3;
-            DateTime updatedStartDate = DateTime.Now.AddHours(updatedDuration);
-            DateTime updatedEndDate = updatedStartDate.AddHours(updatedDuration);
-            string updatedUsername = "SecondTestUser";
-            List<string> updatedParticipants = new List<string>()
-            {
-                username,
-                updatedUsername
-            };
-            updatedAppointment.Update(creator, updatedDescription, updatedStartDate, updatedEndDate, updatedParticipants);
-            bool isSaved = updatedAppointment.SaveUpdatedAppointment();
-            bool isPopulated = false;
-
-            // Act
-            string jsonAppointments = null;
-            try
-            {
-                jsonAppointments = File.ReadAllText(testAppointmentFileName);
-            }
-            catch (FileNotFoundException e)
-            {
-                Debug.Write(e);
-            }
-
-            if (jsonAppointments != null)
-            {
-                allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
-                isPopulated = true;
-            }
-            var apointments = allAppointments.Find(appointment => appointment.Title == updatedAppointment.Title);
-            bool isFound = apointments != null;
-            bool result = isSaved && isFound && isPopulated;
 
             // Assert
             Assert.IsTrue(result);
@@ -177,43 +116,6 @@ namespace CalendarApp.UnitTests
 
             // Assert
             Assert.IsTrue(result);
-        }
-
-        [Test]
-        public void Delete_DeleteAppointment_RemoveFromJson()
-        {
-            // Arrange
-            List<Appointment> allAppointments = null;
-
-            // Act
-            appointment.SaveNewAppointment();
-            updatedAppointment.SaveNewAppointment();
-            appointment.Delete();
-            string jsonAppointments = null;
-            try
-            {
-                jsonAppointments = File.ReadAllText(testAppointmentFileName);
-            }
-            catch (FileNotFoundException e)
-            {
-                Debug.Write(e);
-            }
-
-            if (jsonAppointments != null)
-            {
-                allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
-            }
-            var apointments = allAppointments.Find(appointment => appointment.Title == title);
-            bool result = apointments == null;
-
-            // Assert
-            Assert.IsTrue(result);
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            File.Delete(testAppointmentFileName);
         }
         #endregion
     }

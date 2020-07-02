@@ -26,10 +26,6 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\net
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\nunit.framework.dll
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\NUnit.VisualStudio.TestAdapter.dll
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\nunit.core.dll
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\nunit.core.interfaces.dll
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\nunit.util.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\de\Xceed.Wpf.AvalonDock.resources.dll
@@ -112,8 +108,10 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\net
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.csprojAssemblyReference.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.AssemblyInfoInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.AssemblyInfo.cs
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.csproj.CoreCompileInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.csproj.CopyComplete
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.pdb
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.genruntimeconfig.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\bin\Debug\netcoreapp3.1\Moq.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp.UnitTest\obj\Debug\netcoreapp3.1\CalendarApp.UnitTests.csproj.CoreCompileInputs.cache

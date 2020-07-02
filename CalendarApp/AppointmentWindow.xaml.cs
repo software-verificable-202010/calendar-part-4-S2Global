@@ -12,10 +12,9 @@ namespace CalendarApp
     public partial class AppointmentWindow : Window
     {
         #region Methods
-        public AppointmentWindow(Appointment appointment)
+        public AppointmentWindow()
         {
             InitializeComponent();
-            UpdateAppointmentView(appointment);
         }
 
         public void UpdateAppointmentView(Appointment appointment)
@@ -46,9 +45,9 @@ namespace CalendarApp
             }
         }
 
-        #pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
         public void UpdateText(List<TextBlock> appointmentParameters, Appointment appointment)
-        #pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             if (appointmentParameters != null && appointment != null)
             {
@@ -60,7 +59,7 @@ namespace CalendarApp
                 int descriptionPosition = 5;
                 StringBuilder participantText = new StringBuilder();
                 appointmentParameters[titlePosition].Text = appointment.Title;
-                appointmentParameters[creatorPosition].Text = appointment.Creator.Username;
+                appointmentParameters[creatorPosition].Text = appointment.Creator;
                 appointmentParameters[startDatePosition].Text = appointment.StartDate.ToString(CultureInfo.InvariantCulture);
                 appointmentParameters[endDatePosition].Text = appointment.EndDate.ToString(CultureInfo.InvariantCulture);
                 foreach (string participant in appointment.Participants)
@@ -74,20 +73,25 @@ namespace CalendarApp
             }
         }
 
-        public static void UpdateFontSize(List<TextBlock> appointmentParameters)
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public void UpdateFontSize(List<TextBlock> appointmentParameters)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
+            int fontSize = 16;
             if (appointmentParameters != null)
             {
                 foreach(var parameter in appointmentParameters)
                 {
-                    parameter.FontSize = 16;
+                    parameter.FontSize = fontSize;
                 }
             }
         }
 
-        public static void UpdateRowPosition(List<TextBlock> appointmentParameters)
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public void UpdateRowPosition(List<TextBlock> appointmentParameters)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
-            if(appointmentParameters != null)
+            if (appointmentParameters != null)
             {
                 int titleRowPosition = 0;
                 int creatorRowPosition = 1;
@@ -105,7 +109,9 @@ namespace CalendarApp
             }  
         }
 
-        public static void UpdateColumnPosition(List<TextBlock> appointmentParameters)
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public void UpdateColumnPosition(List<TextBlock> appointmentParameters)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             if (appointmentParameters != null)
             {

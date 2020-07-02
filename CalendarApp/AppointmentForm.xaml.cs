@@ -79,7 +79,8 @@ namespace CalendarApp
             if (titleExists && descriptionExists && startDateExists && endDateExists && participantExists)
             {
                 List<string> participants = participantBox.Text.Split().ToList();
-                Appointment appointment = MainWindow.GetSessionUserAppointments().Find(appointment => appointment.Title == titleBox.Text);
+                Appointment appointment = MainWindow.GetSessionUserAppointments().Find(tokenAppointment => tokenAppointment.Title == titleBox.Text);
+                appointment.Delete();
                 appointment.Update(MainWindow.SessionUser, descriptionBox.Text, (DateTime)startDateBox.Value, (DateTime)endDateBox.Value, participants);
                 appointment.SaveUpdatedAppointment();
                 this.Close();

@@ -52,7 +52,8 @@ namespace CalendarApp
             {
                 var button = sender as Button;
                 Appointment appointment = button.Tag as Appointment;
-                var AppointmentView = new AppointmentWindow(appointment);
+                var AppointmentView = new AppointmentWindow();
+                AppointmentView.UpdateAppointmentView(appointment);
                 AppointmentView.Show();
             }
         }

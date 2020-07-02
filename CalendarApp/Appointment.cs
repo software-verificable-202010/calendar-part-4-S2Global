@@ -16,7 +16,7 @@ namespace CalendarApp
         #endregion
 
         #region Properties
-        public User Creator { get; set; }
+        public string Creator { get; set; }
         public List<string> Participants { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -26,7 +26,7 @@ namespace CalendarApp
 
         #region Methods
         [JsonConstructor]
-        public Appointment(string title, string description, DateTime startDate, DateTime endDate, User creator, List<string> participants)
+        public Appointment(string title, string description, DateTime startDate, DateTime endDate, string creator, List<string> participants)
         {
             this.Title = title;
             this.Description = description;
@@ -35,7 +35,7 @@ namespace CalendarApp
             this.Creator = creator;
             if(creator != null && participants != null)
             {
-                participants.Add(creator.Username);
+                participants.Add(creator);
             }
             this.Participants = participants;
         }
@@ -75,27 +75,10 @@ namespace CalendarApp
             return true;
         }
 
-        public void Update(User user, string description, DateTime startDate, DateTime endDate, List<string> participants)
+        public void Update(string user, string description, DateTime startDate, DateTime endDate, List<string> participants)
         {
-            if (user != null && user.Username == Creator.Username)
+            if (user != null && user == Creator)
             {
-                string jsonAppointmentsToRemove = null;
-                try
-                {
-                    jsonAppointmentsToRemove = File.ReadAllText(appointmentsFileName);
-                }
-                catch (FileNotFoundException e)
-                {
-                    Debug.Write(e);
-                }
-                if (jsonAppointmentsToRemove != null)
-                {
-                    List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointmentsToRemove);
-                    Appointment appointmentToRemove = appointments.Find(appointment => appointment.Title == this.Title);
-                    appointments.Remove(appointmentToRemove);
-                    var convertedJson = JsonConvert.SerializeObject(appointments, Newtonsoft.Json.Formatting.Indented);
-                    File.WriteAllText(appointmentsFileName, convertedJson);
-                }
                 this.Description = description;
                 this.StartDate = startDate;
                 this.EndDate = endDate;
@@ -166,7 +149,7 @@ namespace CalendarApp
 
         public void Delete()
         {
-            if (MainWindow.SessionUser.Username == Creator.Username)
+            if (MainWindow.SessionUser == Creator)
             {
                 string jsonAppointmentsToRemove = null;
                 try

@@ -114,7 +114,8 @@ namespace CalendarApp
                 List<Appointment> appointments = button.Tag as List<Appointment>;
                 foreach (Appointment appointment in appointments)
                 {
-                    var AppointmentView = new AppointmentWindow(appointment);
+                    var AppointmentView = new AppointmentWindow();
+                    AppointmentView.UpdateAppointmentView(appointment);
                     AppointmentView.Show();
                 }
             }
