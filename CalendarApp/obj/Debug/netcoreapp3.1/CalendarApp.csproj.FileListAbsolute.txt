@@ -28,10 +28,12 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csprojAssemblyReference.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentForm.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentWindow.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondSignInWindow.g.cs
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondWeekWindow.g.cs
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondWindow.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SignInWindow.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\WeekWindow.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\App.g.cs
@@ -41,6 +43,9 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentForm.baml
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentWindow.baml
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondSignInWindow.baml
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondWeekWindow.baml
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SecondWindow.baml
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\SignInWindow.baml
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\WeekWindow.baml
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.g.resources
@@ -53,3 +58,4 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.pdb
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.genruntimeconfig.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csprojAssemblyReference.cache

@@ -146,6 +146,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "OpenCover": {
+              "target": "Package",
+              "version": "[4.7.922, )"
             }
           },
           "imports": [

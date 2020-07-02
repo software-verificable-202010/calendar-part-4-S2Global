@@ -16,6 +16,15 @@
     <Compile Update="AppointmentWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SecondSignInWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecondWeekWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SecondWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SignInWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +40,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecondSignInWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecondWeekWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SecondWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SignInWindow.xaml">

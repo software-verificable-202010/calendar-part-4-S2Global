@@ -441,6 +441,7 @@
           }
         }
       },
+      "OpenCover/4.7.922": {},
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -804,7 +805,8 @@
         "dependencies": {
           "Extended.Wpf.Toolkit": "3.8.1",
           "NUnit": "3.12.0",
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "OpenCover": "4.7.922"
         },
         "runtime": {
           "CalendarApp.dll": {}
@@ -929,6 +931,13 @@
       "sha512": "sha512-K4c5RuLsj6jybgVt9QV/sm3F0vBvLLMoxFK0dj1vhP3R4JhRE8OMkMBu6M8NAGkBwykZUCxvZIyZCsXRd3DVDg==",
       "path": "nunittestadapter.withframework/2.0.0",
       "hashPath": "nunittestadapter.withframework.2.0.0.nupkg.sha512"
+    },
+    "OpenCover/4.7.922": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mwqq3r8cHj7qazNzWp1K9zmU15amC9bzMvFK83zM4D+ATSN/IOkJGZh6kEvXnTVJjl6LN6U/4QCdRHxulAISuA==",
+      "path": "opencover/4.7.922",
+      "hashPath": "opencover.4.7.922.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

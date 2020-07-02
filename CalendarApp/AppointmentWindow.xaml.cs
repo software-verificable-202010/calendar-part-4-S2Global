@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CalendarApp
 {
@@ -53,7 +46,9 @@ namespace CalendarApp
             }
         }
 
+        #pragma warning disable CA1822 // Member cannot be static for testing purposes.
         public void UpdateText(List<TextBlock> appointmentParameters, Appointment appointment)
+        #pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             if (appointmentParameters != null && appointment != null)
             {

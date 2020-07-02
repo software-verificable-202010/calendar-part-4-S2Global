@@ -68,11 +68,11 @@ namespace CalendarApp.UnitTests
             // Act
             appointmentWindow = new AppointmentWindow(appointment);
             appointmentWindow.UpdateText(appointmentParameters, appointment);
-            StringBuilder participantText = new StringBuilder();
             equalTitle = appointmentParameters[titlePosition].Text == appointment.Title;
             equalCreator = appointmentParameters[creatorPosition].Text == appointment.Creator.Username;
             equalStartDate = appointmentParameters[startDatePosition].Text == appointment.StartDate.ToString(CultureInfo.InvariantCulture);
             equalEndGDate = appointmentParameters[endDatePosition].Text == appointment.EndDate.ToString(CultureInfo.InvariantCulture);
+            StringBuilder participantText = new StringBuilder();
             foreach (string participant in appointment.Participants)
             {
                 string separator = " ";
@@ -85,7 +85,6 @@ namespace CalendarApp.UnitTests
 
             // Assert
             Assert.IsTrue(result);
-
         }
         #endregion
     }

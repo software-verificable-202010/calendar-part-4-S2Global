@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gUEMyE7d+r6pR1tJZNidJWzDpxA+KUyzz5vP0dFkNbttrCZH6COcbbpqZv/u4AeVCMakfI1/lDH0X3fx6QREww==",
+  "dgSpecHash": "q10LVibR0Dpr8GQ6jybBmvDeClK9eZGblptmpQ1ZM6AZPhs9FKXq06u1oqmBtmgR8701jVBsvbM9KbppsRDfqg==",
   "success": true,
   "projectFilePath": "D:\\Documents\\Programming\\Verificable\\Proyecto\\CalendarApp.UnitTest\\CalendarApp.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\Francisco Alvarez\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
     "C:\\Users\\Francisco Alvarez\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512",
     "C:\\Users\\Francisco Alvarez\\.nuget\\packages\\nunittestadapter.withframework\\2.0.0\\nunittestadapter.withframework.2.0.0.nupkg.sha512",
+    "C:\\Users\\Francisco Alvarez\\.nuget\\packages\\opencover\\4.7.922\\opencover.4.7.922.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Francisco Alvarez\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

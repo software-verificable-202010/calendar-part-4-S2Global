@@ -21,14 +21,24 @@ namespace CalendarApp
         #region Fields
         private readonly string appointmentFileName = "Appointments.json";
         private static List<Appointment> sessionUserAppointments;
+        private static WeekWindow weekView;
         #endregion
 
         #region Properties
         public static DateTime CalendarDate { get; set; }
         public static User SessionUser { get; set; }
+        public static bool SecondWindowIsOpen { get; set; }
+
         public static List<Appointment> GetSessionUserAppointments()
         {
-            return sessionUserAppointments;
+            if(sessionUserAppointments != null)
+            {
+                return sessionUserAppointments;
+            }
+            else
+            {
+                return new List<Appointment>();
+            }
         }
         public static void SetSessionUserAppointments(List<Appointment> value)
         {
@@ -37,26 +47,31 @@ namespace CalendarApp
         #endregion
 
         #region Methods
-        public MainWindow(User user)
+        public MainWindow(User user, bool secondWindowIsOpen)
         {
             InitializeComponent();
             CalendarDate = DateTime.Now;
             SessionUser = user;
+            SecondWindowIsOpen = secondWindowIsOpen;
+            secondWindow.IsEnabled = !SecondWindowIsOpen;
             UpdateCalendar();
-        }
-
-        public MainWindow(DateTime incomingDate)
-        {
-            InitializeComponent();
-            CalendarDate = incomingDate;
-            UpdateCalendar();
+            GoToWeek();
         }
 
         public void ReloadWindow(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(SessionUser);
+            weekView.Close();
+            MainWindow mainWindow = new MainWindow(SessionUser, SecondWindowIsOpen);
             mainWindow.Show();
             this.Close();
+        }
+
+        public void SecondWindow(object sender, RoutedEventArgs e)
+        {
+            SecondSignInWindow secondSignInWindow = new SecondSignInWindow();
+            secondSignInWindow.Show();
+            SecondWindowIsOpen = true;
+            secondWindow.IsEnabled = !SecondWindowIsOpen;
         }
 
         public void UpdateCalendar()
@@ -103,11 +118,10 @@ namespace CalendarApp
             UpdateCalendar();
         }
 
-        private void GoToWeek(object sender, RoutedEventArgs e)
+        private void GoToWeek()
         {
-            var weekView = new WeekWindow();
+            weekView = new WeekWindow();
             weekView.Show();
-            this.Close();
         }
 
         private void GoToAppointmentsView(object sender, RoutedEventArgs e)
@@ -210,7 +224,7 @@ namespace CalendarApp
                 DateTime currentDate = firstDayOfMonth.AddDays(day - firstDay);
                 Button dayButton = new Button();
                 int buttonSize = 30;
-                List<Appointment> dayAppointments = sessionUserAppointments.FindAll(appointment => (appointment.StartDate.Date <= currentDate.Date && appointment.EndDate.Date >= currentDate.Date));
+                List<Appointment> dayAppointments = GetSessionUserAppointments().FindAll(appointment => (appointment.StartDate.Date <= currentDate.Date && appointment.EndDate.Date >= currentDate.Date));
                 if (dayAppointments.Count > 0)
                 {
                     string tooltip = "Click to open all appointments for the day.";
@@ -243,9 +257,13 @@ namespace CalendarApp
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";
+            string userName = "User: ";
             title.Append(CalendarDate.Month.ToString(CultureInfo.InvariantCulture));
             title.Append(separator);
             title.Append(CalendarDate.Year);
+            title.Append(separator);
+            title.Append(userName);
+            title.Append(SessionUser.Username);
             MainTitle.Text = title.ToString();
         }
         #endregion
