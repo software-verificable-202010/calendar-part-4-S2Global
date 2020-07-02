@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CalendarApp.UnitTests
 {
-    class UserTests
+    public class UserTests
     {
         #region Fields
         private string username;
@@ -15,15 +15,12 @@ namespace CalendarApp.UnitTests
 
         #region Methods
         [Test]
-        public void User_ValidConstructor()
+        public void UserValidConstructor()
         {
-            // Arrange
             username = "Test User";
             
-            // Act
             User user = new User(username);
 
-            // Assert
             Assert.IsNotNull(user);
         }
         #endregion

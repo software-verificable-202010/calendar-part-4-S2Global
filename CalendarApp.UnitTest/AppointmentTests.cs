@@ -38,9 +38,8 @@ namespace CalendarApp.UnitTests
         }
 
         [Test]
-        public void Appointment_ValidConstrucor()
+        public void AppointmentCausesValidConstrucor()
         {
-            // Arrange
             int duration = 2;
             DateTime startDate = new DateTime(2020, 2, 2);
             DateTime endDate = startDate.AddHours(duration);
@@ -49,17 +48,14 @@ namespace CalendarApp.UnitTests
                 creator
             };
 
-            // Act
             appointment = new Appointment(title, description, startDate, endDate, creator, participants);
 
-            // Assert
             Assert.IsNotNull(appointment);
         }
 
         [Test]
-        public void Update_ChangeAppointmentFields_UpdatesAppointment()
+        public void UpdateCausesChangeAppointmentFields()
         {
-            // Arrange
             string updatedDescription = "Updated appointment used for testing.";
             int updatedDuration = 3;
             DateTime updatedStartDate = new DateTime(2020, 2, 2).AddHours(updatedDuration);
@@ -70,7 +66,6 @@ namespace CalendarApp.UnitTests
                 updatedUsername
             };
 
-            // Act
             updatedAppointment.Update(creator, updatedDescription, updatedStartDate, updatedEndDate, updatedParticipants);
 
             bool descriptionResult = appointment.Description != updatedAppointment.Description;
@@ -79,29 +74,26 @@ namespace CalendarApp.UnitTests
             bool participantsResult = appointment.Participants != updatedAppointment.Participants;
             bool result = descriptionResult && startDateResult && endDateResult && participantsResult;
 
-            // Assert
             Assert.IsTrue(result);
         }
 
         [Test]
-        public void HasOverlap_StartDateAfterEndDate_ReturnTrue()
+        public void HasOverlapForStartDateAfterEndDate()
         {
             // Arrange
             int dayOffset = 2;
             updatedAppointment.StartDate = new DateTime(2020, 2, 2).AddDays(dayOffset);
             updatedAppointment.EndDate = new DateTime(2020, 2, 2);
             allAppointments = new List<Appointment>();
-            // Act
+
             bool result = updatedAppointment.HasOverlap(allAppointments);
 
-            // Assert
             Assert.IsTrue(result);
         }
 
         [Test]
-        public void HasOverlap_OverlappingDate_ReturnTrue()
+        public void HasOverlapForOverlappingDate()
         {
-            // Arrange
             int dayOffset = 2;
             updatedAppointment.StartDate = new DateTime(2020, 2, 2);
             updatedAppointment.EndDate = new DateTime(2020, 2, 2).AddDays(dayOffset);
@@ -111,10 +103,9 @@ namespace CalendarApp.UnitTests
             {
                 appointment
             };
-            // Act
+
             bool result = updatedAppointment.HasOverlap(allAppointments);
 
-            // Assert
             Assert.IsTrue(result);
         }
         #endregion

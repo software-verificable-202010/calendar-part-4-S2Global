@@ -1,0 +1,15 @@
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\nunit.engine.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\nunit.engine.api.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.exe
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.deps.json
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.runtimeconfig.json
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.runtimeconfig.dev.json
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\b\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.AssemblyInfoInputs.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.AssemblyInfo.cs
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.csproj.CopyComplete
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.genruntimeconfig.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp.UnitTests\Debug\netcoreapp3.1\CalendarApp.UnitTests.csprojAssemblyReference.cache

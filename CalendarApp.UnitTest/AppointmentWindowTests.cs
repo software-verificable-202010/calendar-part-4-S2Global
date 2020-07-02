@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace CalendarApp.UnitTests
 {
-    class AppointmentWindowTests
+    public class AppointmentWindowTests
     {
         #region Fields
         private static string title;
@@ -55,9 +55,8 @@ namespace CalendarApp.UnitTests
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateText_ChangeText_UpdatesTextBoxes()
+        public void UpdateTextCausesUpdatedTextBoxes()
         {
-            // Arrange
             bool equalTitle;
             bool equalCreator;
             bool equalStartDate;
@@ -65,7 +64,6 @@ namespace CalendarApp.UnitTests
             bool equalParticipants;
             bool equalDescription;
 
-            // Act
             appointmentWindow.UpdateText(appointmentParameters, appointment.Object);
             equalTitle = appointmentParameters[titlePosition].Text == appointment.Object.Title;
             equalCreator = appointmentParameters[creatorPosition].Text == appointment.Object.Creator;
@@ -82,14 +80,12 @@ namespace CalendarApp.UnitTests
             equalDescription = appointmentParameters[descriptionPosition].Text == appointment.Object.Description;
             bool result = equalTitle && equalCreator && equalStartDate && equalEndDate && equalParticipants && equalDescription;
 
-            // Assert
             Assert.IsTrue(result);
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateFontSize_ChangeFontSize()
+        public void UpdateFontSizeCausesChangeFontSize()
         {
-            // Arrange
             int fontSize = 16;
             bool titleFont;
             bool creatorFont;
@@ -98,7 +94,6 @@ namespace CalendarApp.UnitTests
             bool participantsFont;
             bool descriptionFont;
 
-            // Act
             appointmentWindow.UpdateFontSize(appointmentParameters);
             titleFont = appointmentParameters[titlePosition].FontSize == fontSize;
             creatorFont = appointmentParameters[creatorPosition].FontSize == fontSize;
@@ -108,14 +103,12 @@ namespace CalendarApp.UnitTests
             descriptionFont = appointmentParameters[descriptionPosition].FontSize == fontSize;
             bool result = titleFont && creatorFont && startDateFont && endDateFont && participantsFont && descriptionFont;
 
-            // Assert
             Assert.IsTrue(result);
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateRowPosition_ChangeRows()
+        public void UpdateRowPositionCausesChangeRows()
         {
-            // Arrange
             int titleRowPosition = 0;
             int creatorRowPosition = 1;
             int startDateRowPosition = 2;
@@ -129,7 +122,6 @@ namespace CalendarApp.UnitTests
             bool participantsRow;
             bool descriptionRow;
 
-            // Act
             appointmentWindow.UpdateRowPosition(appointmentParameters);
             titleRow = appointmentParameters[titlePosition].GetValue(Grid.RowProperty).Equals(titleRowPosition);
             creatorRow = appointmentParameters[creatorPosition].GetValue(Grid.RowProperty).Equals(creatorRowPosition);
@@ -139,14 +131,12 @@ namespace CalendarApp.UnitTests
             descriptionRow = appointmentParameters[descriptionPosition].GetValue(Grid.RowProperty).Equals(descriptionRowPosition);
             bool result = titleRow && creatorRow && startDateRow && endDateRow && participantsRow && descriptionRow;
 
-            // Assert
             Assert.IsTrue(result);
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateColumnPosition_ChangeColumns()
+        public void UpdateColumnPositionCausesChangeColumns()
         {
-            // Arrange
             int columnPosition = 1;
             bool titleColumn;
             bool creatorColumn;
@@ -155,7 +145,6 @@ namespace CalendarApp.UnitTests
             bool participantsColumn;
             bool descriptionColumn;
 
-            // Act
             appointmentWindow.UpdateColumnPosition(appointmentParameters);
             titleColumn = appointmentParameters[titlePosition].GetValue(Grid.ColumnProperty).Equals(columnPosition);
             creatorColumn = appointmentParameters[creatorPosition].GetValue(Grid.ColumnProperty).Equals(columnPosition);
@@ -165,7 +154,6 @@ namespace CalendarApp.UnitTests
             descriptionColumn = appointmentParameters[descriptionPosition].GetValue(Grid.ColumnProperty).Equals(columnPosition);
             bool result = titleColumn && creatorColumn && startDateColumn && endDateColumn && participantsColumn && descriptionColumn;
 
-            // Assert
             Assert.IsTrue(result);
         }
         #endregion

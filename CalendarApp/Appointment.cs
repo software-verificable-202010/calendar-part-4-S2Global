@@ -33,7 +33,7 @@ namespace CalendarApp
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.Creator = creator;
-            if(creator != null && participants != null)
+            if(creator != null && participants != null && !participants.Contains(creator))
             {
                 participants.Add(creator);
             }

@@ -39,15 +39,14 @@ namespace CalendarApp
             }
         }
 
-        public void CreateAppointment(object sender, RoutedEventArgs e)
+        private void CreateAppointment(object sender, RoutedEventArgs e)
         {
             bool titleExists = titleBox.Text.Length > 0;
             bool descriptionExists = descriptionBox.Text.Length > 0;
             bool startDateExists = startDateBox.Value.HasValue;
             bool endDateExists = endDateBox.Value.HasValue;
-            bool participantExists = participantBox.Text.Length > 0;
 
-            if (titleExists && descriptionExists && startDateExists && endDateExists && participantExists)
+            if (titleExists && descriptionExists && startDateExists && endDateExists)
             {
                 List<string> participants = participantBox.Text.Split().ToList();
                 Appointment appointment = new Appointment(titleBox.Text, descriptionBox.Text, (DateTime)startDateBox.Value, (DateTime)endDateBox.Value, MainWindow.SessionUser, participants);
@@ -68,7 +67,7 @@ namespace CalendarApp
             }
         }
 
-        public void UpdateAppointment(object sender, RoutedEventArgs e)
+        private void UpdateAppointment(object sender, RoutedEventArgs e)
         {
             bool titleExists = titleBox.Text.Length > 0;
             bool descriptionExists = descriptionBox.Text.Length > 0;
@@ -92,7 +91,7 @@ namespace CalendarApp
             }
         }
 
-        public void DeleteAppointment(object sender, RoutedEventArgs e)
+        private void DeleteAppointment(object sender, RoutedEventArgs e)
         {
             const string messageBoxText = "Are You Sure?";
             MessageBoxResult messageBoxResult = MessageBox.Show(messageBoxText, Properties.Resources.AppointmentCaption, MessageBoxButton.YesNo);

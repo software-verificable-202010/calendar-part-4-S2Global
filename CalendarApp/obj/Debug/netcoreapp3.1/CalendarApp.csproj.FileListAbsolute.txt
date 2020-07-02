@@ -28,6 +28,7 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\bin\Debug\netcoreapp3.1\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csprojAssemblyReference.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentForm.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\AppointmentWindow.g.cs
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\MainWindow.g.cs
@@ -53,9 +54,8 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.GenerateResource.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.AssemblyInfoInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.AssemblyInfo.cs
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CoreCompileInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CopyComplete
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.pdb
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.genruntimeconfig.cache
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csprojAssemblyReference.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CoreCompileInputs.cache

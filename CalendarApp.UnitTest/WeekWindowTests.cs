@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace CalendarApp.UnitTests
 {
-    class WeekWindowTests
+    public class WeekWindowTests
     {
         #region Fields
         private WeekWindow weekWindow;
@@ -27,9 +27,8 @@ namespace CalendarApp.UnitTests
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateTitle_TitleChanges()
+        public void UpdateTitleCausesTitleChanges()
         {
-            // Arrange
             StringBuilder title = new StringBuilder();
             string separator = " - ";
             string userNameField = "User: ";
@@ -40,10 +39,8 @@ namespace CalendarApp.UnitTests
             title.Append(userNameField);
             title.Append(username);
 
-            // Act
             string mainTitle = weekWindow.UpdateTitle(new DateTime(2020, 2, 2));
 
-            // Assert
             Assert.AreEqual(mainTitle, title.ToString());
         }
         #endregion

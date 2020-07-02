@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 
 namespace CalendarApp.UnitTests
 {
-    class SecondWindowTests
+    public class SecondWindowTests
     {
         #region Fields
         SecondWindow secondWindow;
@@ -28,9 +28,8 @@ namespace CalendarApp.UnitTests
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateTitle_TitleChanges()
+        public void UpdateTitleCausesTitleChanges()
         {
-            // Arrange
             StringBuilder title = new StringBuilder();
             string separator = " - ";
             string userNameField = "Viewing: ";
@@ -41,17 +40,14 @@ namespace CalendarApp.UnitTests
             title.Append(userNameField);
             title.Append(username);
 
-            // Act
             string mainTitle = secondWindow.UpdateTitle(new DateTime(2020, 2, 2), username);
 
-            // Assert
             Assert.AreEqual(mainTitle, title.ToString());
         }
 
         [Test, Apartment(ApartmentState.STA)]
-        public void UpdateWeekendRectangle_UpdatesParameters()
+        public void UpdateWeekendRectangleCausesUpdatesParameters()
         {
-            // Arrange
             int weekendRowProperty = 0;
             int weekendColumnProperty = 5;
             int weekendRowSpanProperty = 6;
@@ -61,7 +57,6 @@ namespace CalendarApp.UnitTests
             bool equalRowSpan;
             bool equalColumnSpan;
 
-            // Act
             Rectangle rectangle = secondWindow.UpdateWeekendRectangle();
             equalRow = rectangle.GetValue(Grid.RowProperty).Equals(weekendRowProperty);
             equalColumn = rectangle.GetValue(Grid.ColumnProperty).Equals(weekendColumnProperty);
@@ -69,7 +64,6 @@ namespace CalendarApp.UnitTests
             equalColumnSpan = rectangle.GetValue(Grid.ColumnSpanProperty).Equals(weekendColumnSpanProperty);
             bool result = equalRow && equalColumn && equalRowSpan && equalColumnSpan;
 
-            // Assert
             Assert.IsTrue(result);
         }
         #endregion

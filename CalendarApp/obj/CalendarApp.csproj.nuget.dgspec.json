@@ -43,13 +43,13 @@
           "dependencies": {
             "Extended.Wpf.Toolkit": {
               "target": "Package",
-              "version": "[3.8.1, )"
+              "version": "[4.0.1, )"
             },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.9.6, )"
+              "version": "[3.0.0, )"
             },
             "NUnit": {
               "target": "Package",
