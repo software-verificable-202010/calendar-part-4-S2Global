@@ -15,6 +15,6 @@ Reference: https://www.froglogic.com/coco/statement-coverage/
 Static analysis was run to keep the code up to a high level of scrutiny.
 The rules applied and results can be found in the Evidence folder.
 
-Error NU1701 was left untouched for both projects as it did not impact the code and no solution was found to remove it.
+Error NU1701 was left untouched for both projects as it did not impact the code and no solution was found for it.
 
 Error CA1822 was disabled for each case in which a method needed to be called from the Test Project.
