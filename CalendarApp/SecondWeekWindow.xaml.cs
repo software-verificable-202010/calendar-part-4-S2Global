@@ -15,20 +15,21 @@ namespace CalendarApp
     {
         #region Fields
         private readonly int weekLength = 7;
+        private readonly string username;
         #endregion
 
         #region Methods
-        public SecondWeekWindow()
+        public SecondWeekWindow(string user)
         {
-            InitializeComponent();
-            UpdateWeekView();
+            username = user;
         }
 
-        public void UpdateWeekView()
+        public void UpdateSecondWeekView()
         {
+            InitializeComponent();
             WeekView.Children.Clear();
             DayNumbers.Children.Clear();
-            UpdateTitle();
+            WeekTitle.Text = UpdateTitle(MainWindow.CalendarDate);
             UpdateDayNumbers();
             UpdateTimes();
             UpdateDayAppointments();
@@ -37,13 +38,13 @@ namespace CalendarApp
         private void NextWeekClick(object sender, RoutedEventArgs e)
         {
             MainWindow.CalendarDate = MainWindow.CalendarDate.AddDays(weekLength);
-            UpdateWeekView();
+            UpdateSecondWeekView();
         }
 
         private void PreviousWeekClick(object sender, RoutedEventArgs e)
         {
             MainWindow.CalendarDate = MainWindow.CalendarDate.AddDays(-weekLength);
-            UpdateWeekView();
+            UpdateSecondWeekView();
         }
 
         private void GoToAppointmentView(object sender, RoutedEventArgs e)
@@ -177,14 +178,20 @@ namespace CalendarApp
             }
         }
 
-        private void UpdateTitle()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public string UpdateTitle(DateTime date)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";
-            title.Append(MainWindow.CalendarDate.Month.ToString(CultureInfo.InvariantCulture));
+            string userNameField = "Viewing: ";
+            title.Append(date.Month.ToString(CultureInfo.InvariantCulture));
             title.Append(separator);
-            title.Append(MainWindow.CalendarDate.Year);
-            WeekTitle.Text = title.ToString();
+            title.Append(date.Year);
+            title.Append(separator);
+            title.Append(userNameField);
+            title.Append(username);
+            return title.ToString();
         }
         #endregion
     }

@@ -27,7 +27,7 @@ namespace CalendarApp
 
         #region Properties
         public static DateTime CalendarDate { get; set; }
-        public static User SecondUser { get; set; }
+        public static string SecondUser { get; set; }
         public static List<Appointment> GetSecondUserAppointments()
         {
             if (secondUserAppointments != null)
@@ -47,11 +47,15 @@ namespace CalendarApp
 
         #region Methods
 
-        public SecondWindow(User user)
+        public SecondWindow(string user)
+        {
+            SecondUser = user;
+        }
+
+        public void UpdateSecondWindow()
         {
             InitializeComponent();
             CalendarDate = DateTime.Now;
-            SecondUser = user;
             UpdateCalendar();
             GoToWeek();
         }
@@ -59,8 +63,8 @@ namespace CalendarApp
         public void UpdateCalendar()
         {
             MonthView.Children.Clear();
-            UpdateTitle();
-            UpdateWeekendRectangle();
+            MainTitle.Text = UpdateTitle(CalendarDate, SecondUser);
+            MonthView.Children.Add(UpdateWeekendRectangle());
             GetAppointments();
             UpdateDayNumbers();
             UpdateDayButtons();
@@ -82,7 +86,7 @@ namespace CalendarApp
             if (jsonAppointments != null)
             {
                 List<Appointment> allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
-                SetSessionUserAppointments(allAppointments.Where(x => x.Participants.Contains(SecondUser.Username)).ToList());
+                SetSessionUserAppointments(allAppointments.Where(x => x.Participants.Contains(SecondUser)).ToList());
             }
         }
 
@@ -100,9 +104,10 @@ namespace CalendarApp
             UpdateCalendar();
         }
 
-        private void GoToWeek()
+        private static void GoToWeek()
         {
-            secondWeekView = new SecondWeekWindow();
+            secondWeekView = new SecondWeekWindow(SecondUser);
+            secondWeekView.UpdateSecondWeekView();
             secondWeekView.Show();
         }
 
@@ -121,7 +126,9 @@ namespace CalendarApp
             }
         }
 
-        private void UpdateWeekendRectangle()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public Rectangle UpdateWeekendRectangle()
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             int weekendRowProperty = 0;
             int weekendColumnProperty = 5;
@@ -137,7 +144,7 @@ namespace CalendarApp
                 Color = Color.FromArgb(67, 200, 200, 10)
             };
             weekendHighlight.SetValue(Shape.FillProperty, rectangleColourFill);
-            MonthView.Children.Add(weekendHighlight);
+            return weekendHighlight;
         }
 
         private void UpdateDayNumbers()
@@ -230,18 +237,20 @@ namespace CalendarApp
             }
         }
 
-        private void UpdateTitle()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public string UpdateTitle(DateTime date, string username)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";
-            string userName = "User: ";
-            title.Append(CalendarDate.Month.ToString(CultureInfo.InvariantCulture));
+            string userNameField = "Viewing: ";
+            title.Append(date.Month.ToString(CultureInfo.InvariantCulture));
             title.Append(separator);
-            title.Append(CalendarDate.Year);
+            title.Append(date.Year);
             title.Append(separator);
-            title.Append(userName);
-            title.Append(SecondUser.Username);
-            MainTitle.Text = title.ToString();
+            title.Append(userNameField);
+            title.Append(username);
+            return title.ToString();
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

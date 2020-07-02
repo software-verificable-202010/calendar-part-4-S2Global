@@ -9,12 +9,13 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
+
 namespace CalendarApp.UnitTests
 {
-    class MainWindowTests
+    class SecondWindowTests
     {
         #region Fields
-        MainWindow mainWindow;
+        SecondWindow secondWindow;
         string username;
         #endregion
 
@@ -22,9 +23,8 @@ namespace CalendarApp.UnitTests
         [SetUp]
         public void Setup()
         {
-            bool noSecondWindow = false;
             username = "Test Username";
-            mainWindow = new MainWindow(username, noSecondWindow);
+            secondWindow = new SecondWindow(username);
         }
 
         [Test, Apartment(ApartmentState.STA)]
@@ -33,7 +33,7 @@ namespace CalendarApp.UnitTests
             // Arrange
             StringBuilder title = new StringBuilder();
             string separator = " - ";
-            string userNameField = "User: ";
+            string userNameField = "Viewing: ";
             title.Append(new DateTime(2020, 2, 2).Month.ToString(CultureInfo.InvariantCulture));
             title.Append(separator);
             title.Append(new DateTime(2020, 2, 2).Year);
@@ -42,7 +42,7 @@ namespace CalendarApp.UnitTests
             title.Append(username);
 
             // Act
-            string mainTitle = mainWindow.UpdateTitle(new DateTime(2020,2,2), username);
+            string mainTitle = secondWindow.UpdateTitle(new DateTime(2020, 2, 2), username);
 
             // Assert
             Assert.AreEqual(mainTitle, title.ToString());
@@ -62,7 +62,7 @@ namespace CalendarApp.UnitTests
             bool equalColumnSpan;
 
             // Act
-            Rectangle rectangle = mainWindow.UpdateWeekendRectangle();
+            Rectangle rectangle = secondWindow.UpdateWeekendRectangle();
             equalRow = rectangle.GetValue(Grid.RowProperty).Equals(weekendRowProperty);
             equalColumn = rectangle.GetValue(Grid.ColumnProperty).Equals(weekendColumnProperty);
             equalRowSpan = rectangle.GetValue(Grid.RowSpanProperty).Equals(weekendRowSpanProperty);

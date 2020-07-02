@@ -35,7 +35,7 @@ namespace CalendarApp.UnitTests
             description = "Appointment used for testing.";
             creator = "TestUser";
             int duration = 2;
-            DateTime startDate = DateTime.Now;
+            DateTime startDate = new DateTime(2020, 2, 2);
             DateTime endDate = startDate.AddHours(duration);
             List<string> participants = new List<string>()
             {

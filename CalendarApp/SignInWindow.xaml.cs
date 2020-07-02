@@ -20,7 +20,7 @@ namespace CalendarApp
                 User userSignIn = new User(usernameBox.Text);
                 userSignIn.Save();
                 MainWindow mainWindow = new MainWindow(userSignIn.Username, false);
-                mainWindow.RunMainWindow();
+                mainWindow.UpdateMainWindow();
                 mainWindow.Show();
                 this.Close();
             }

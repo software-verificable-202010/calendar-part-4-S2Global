@@ -20,7 +20,8 @@ namespace CalendarApp
             {
                 User userSignIn = new User(usernameBox.Text);
                 userSignIn.Save();
-                SecondWindow secondWindow = new SecondWindow(userSignIn);
+                SecondWindow secondWindow = new SecondWindow(userSignIn.Username);
+                secondWindow.UpdateSecondWindow();
                 secondWindow.Show();
                 this.Close();
             }

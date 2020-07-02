@@ -53,7 +53,7 @@ namespace CalendarApp
             SecondWindowIsOpen = secondWindowIsOpen;
         }
 
-        public void RunMainWindow()
+        public void UpdateMainWindow()
         {
             InitializeComponent();
             CalendarDate = DateTime.Now;
@@ -66,7 +66,7 @@ namespace CalendarApp
         {
             weekView.Close();
             MainWindow mainWindow = new MainWindow(SessionUser, SecondWindowIsOpen);
-            mainWindow.RunMainWindow();
+            mainWindow.UpdateMainWindow();
             mainWindow.Show();
             this.Close();
         }
@@ -125,7 +125,8 @@ namespace CalendarApp
 
         private static void GoToWeek()
         {
-            weekView = new WeekWindow();
+            weekView = new WeekWindow(SessionUser);
+            weekView.UpdateWeekView();
             weekView.Show();
         }
 

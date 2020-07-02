@@ -26,7 +26,7 @@ namespace CalendarApp.UnitTests
             description = "Appointment used for testing.";
             creator = "TestUser";
             int duration = 2;
-            DateTime startDate = DateTime.Now;
+            DateTime startDate = new DateTime(2020, 2, 2);
             DateTime endDate = startDate.AddHours(duration);
             List<string> participants = new List<string>()
             {
@@ -42,7 +42,7 @@ namespace CalendarApp.UnitTests
         {
             // Arrange
             int duration = 2;
-            DateTime startDate = DateTime.Now;
+            DateTime startDate = new DateTime(2020, 2, 2);
             DateTime endDate = startDate.AddHours(duration);
             List<string> participants = new List<string>()
             {
@@ -62,7 +62,7 @@ namespace CalendarApp.UnitTests
             // Arrange
             string updatedDescription = "Updated appointment used for testing.";
             int updatedDuration = 3;
-            DateTime updatedStartDate = DateTime.Now.AddHours(updatedDuration);
+            DateTime updatedStartDate = new DateTime(2020, 2, 2).AddHours(updatedDuration);
             DateTime updatedEndDate = updatedStartDate.AddHours(updatedDuration);
             string updatedUsername = "SecondTestUser";
             List<string> updatedParticipants = new List<string>()
@@ -88,8 +88,8 @@ namespace CalendarApp.UnitTests
         {
             // Arrange
             int dayOffset = 2;
-            updatedAppointment.StartDate = DateTime.Now.AddDays(dayOffset);
-            updatedAppointment.EndDate = DateTime.Now;
+            updatedAppointment.StartDate = new DateTime(2020, 2, 2).AddDays(dayOffset);
+            updatedAppointment.EndDate = new DateTime(2020, 2, 2);
             allAppointments = new List<Appointment>();
             // Act
             bool result = updatedAppointment.HasOverlap(allAppointments);
@@ -103,10 +103,10 @@ namespace CalendarApp.UnitTests
         {
             // Arrange
             int dayOffset = 2;
-            updatedAppointment.StartDate = DateTime.Now;
-            updatedAppointment.EndDate = DateTime.Now.AddDays(dayOffset);
-            appointment.StartDate = DateTime.Now;
-            appointment.EndDate = DateTime.Now.AddDays(dayOffset);
+            updatedAppointment.StartDate = new DateTime(2020, 2, 2);
+            updatedAppointment.EndDate = new DateTime(2020, 2, 2).AddDays(dayOffset);
+            appointment.StartDate = new DateTime(2020, 2, 2);
+            appointment.EndDate = new DateTime(2020, 2, 2).AddDays(dayOffset);
             allAppointments = new List<Appointment>()
             {
                 appointment
