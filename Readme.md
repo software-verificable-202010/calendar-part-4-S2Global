@@ -12,7 +12,7 @@ Blocks are Statement sequences that are treated as a single Statement. Another t
 Reference: https://www.froglogic.com/coco/statement-coverage/
 
 ## Static Analysis
-Static analysis was run to keep the code up to a high level of scrutiny.
+Static analysis was run to keep the code up to a high level of scrutiny using the Microsoft.CodeAnalysis.FxCopAnalyzers Package.
 The rules applied and results can be found in the Evidence folder.
 
 Error NU1701 was left untouched for both projects as it did not impact the code and no solution was found for it.
