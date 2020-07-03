@@ -58,3 +58,4 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lu
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp\Debug\netcoreapp3.1\CalendarApp.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp\Debug\netcoreapp3.1\CalendarApp.pdb
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp\Debug\netcoreapp3.1\CalendarApp.genruntimeconfig.cache
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\.vs\CalendarApp\v16\lut\0\i\CalendarApp\Debug\netcoreapp3.1\CalendarApp.csprojAssemblyReference.cache
