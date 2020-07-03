@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Castle.Core.Internal;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,22 @@ namespace CalendarApp.UnitTests
             string mainTitle = secondWeekWindow.UpdateTitle(new DateTime(2020, 2, 2));
 
             Assert.AreEqual(mainTitle, title.ToString());
+        }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void UpdateDayNumbersReturnsList()
+        {
+            List<TextBlock> numbers = secondWeekWindow.UpdateDayNumbers(new DateTime(2020, 2, 2));
+
+            Assert.IsInstanceOf<List<TextBlock>>(numbers);
+        }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void UpdateTimesReturnsList()
+        {
+            List<TextBlock> times = secondWeekWindow.UpdateTimes();
+
+            Assert.IsInstanceOf<List<TextBlock>>(times);
         }
         #endregion
     }

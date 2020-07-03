@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Castle.Core.Internal;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,27 @@ namespace CalendarApp.UnitTests
             bool noSecondWindow = false;
             username = "Test Username";
             mainWindow = new MainWindow(username, noSecondWindow);
+        }
+
+        [Test , Apartment(ApartmentState.STA)]
+        public void GetSessionUserAppointmentsWhenNull()
+        {
+            var appointments = MainWindow.GetSessionUserAppointments();
+
+            bool result = appointments.IsNullOrEmpty();
+
+            Assert.IsTrue(result);
+        }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void SetSessionUserAppointmentsIsValid()
+        {
+            List<Appointment> setAppointments = new List<Appointment>();
+            MainWindow.SetSessionUserAppointments(setAppointments);
+
+            List<Appointment> gotAppointments = MainWindow.GetSessionUserAppointments();
+
+            Assert.AreEqual(setAppointments, gotAppointments);
         }
 
         [Test, Apartment(ApartmentState.STA)]

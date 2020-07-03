@@ -5,9 +5,9 @@ CalendarApp is a Windows Application, user based calendar with both month and we
 In this last update, a guest view functionality has been added to allow users a chance to open other users calendars in a read-only manner.
 
 ## Testing
-Unit testing has been applied to a considerable portion of the code (20.97%). Proof can be found in the Evidence folder.
+Unit testing has been applied to a considerable portion of the code (27.21%). Proof can be found in the Evidence folder.
 Tests have been run through the Visual Studio 2019 Enterprise Test Explorer tool, which measures Block Statements.
-Blocks are Statement sequences that are treated as a single Statement. This makes it a type of Statement Coverage. 
+Blocks are Statement sequences that are treated as a single Statement. Another type of Statement Coverage. 
 
 Reference: https://www.froglogic.com/coco/statement-coverage/
 

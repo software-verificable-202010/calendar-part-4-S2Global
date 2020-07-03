@@ -54,8 +54,8 @@ D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.GenerateResource.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.AssemblyInfoInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.AssemblyInfo.cs
+D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CoreCompileInputs.cache
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CopyComplete
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.dll
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.pdb
 D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.genruntimeconfig.cache
-D:\Documents\Programming\Verificable\Proyecto\CalendarApp\obj\Debug\netcoreapp3.1\CalendarApp.csproj.CoreCompileInputs.cache

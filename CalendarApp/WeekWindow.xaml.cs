@@ -30,8 +30,16 @@ namespace CalendarApp
             WeekView.Children.Clear();
             DayNumbers.Children.Clear();
             WeekTitle.Text = UpdateTitle(MainWindow.CalendarDate);
-            UpdateDayNumbers();
-            UpdateTimes();
+            List<TextBlock> numbers = UpdateDayNumbers(MainWindow.CalendarDate);
+            foreach (var number in numbers)
+            {
+                DayNumbers.Children.Add(number);
+            }
+            List<TextBlock> times = UpdateTimes();
+            foreach (var time in times)
+            {
+                WeekView.Children.Add(time);
+            }
             UpdateDayAppointments();
         }
 
@@ -59,10 +67,11 @@ namespace CalendarApp
             }
         }
 
-        private void UpdateDayNumbers()
+        public List<TextBlock> UpdateDayNumbers(DateTime date)
         {
+            List<TextBlock> numbers = new List<TextBlock>();
             int dayOffset = 1;
-            DateTime dayTracker = MainWindow.CalendarDate;
+            DateTime dayTracker = date;
             int dayOfWeek = (int)dayTracker.DayOfWeek;
             dayTracker = dayTracker.AddDays(-dayOfWeek + dayOffset);
             for (int i = 1; i < weekLength + dayOffset; i++)
@@ -78,9 +87,10 @@ namespace CalendarApp
                 dayNumber.SetValue(Grid.ColumnProperty, i);
                 dayNumber.SetValue(Grid.VerticalAlignmentProperty, VerticalAlignment.Center);
                 dayNumber.SetValue(Grid.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-                DayNumbers.Children.Add(dayNumber);
-                dayTracker = dayTracker.AddDays(1); 
+                numbers.Add(dayNumber);
+                dayTracker = dayTracker.AddDays(dayOffset);
             }
+            return numbers;
         }
 
         private void UpdateDayAppointments()
@@ -153,8 +163,11 @@ namespace CalendarApp
             WeekView.Children.Add(appointmentButtton);
         }
 
-        private void UpdateTimes()
+#pragma warning disable CA1822 // Mark members as static
+        public List<TextBlock> UpdateTimes()
+#pragma warning restore CA1822 // Mark members as static
         {
+            List<TextBlock> times = new List<TextBlock>();
             int loopStart = 0;
             int loopEnd = 23;
             for (int i = loopStart; i < loopEnd + 1; i++)
@@ -174,13 +187,14 @@ namespace CalendarApp
                 time.SetValue(Grid.ColumnProperty, columnPosition);
                 time.SetValue(Grid.VerticalAlignmentProperty, VerticalAlignment.Center);
                 time.SetValue(Grid.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-                WeekView.Children.Add(time);
+                times.Add(time);
             }
+            return times;
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public string UpdateTitle(DateTime date)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";

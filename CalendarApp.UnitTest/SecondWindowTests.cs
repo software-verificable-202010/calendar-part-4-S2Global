@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Castle.Core.Internal;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+
 
 
 namespace CalendarApp.UnitTests
@@ -25,6 +27,16 @@ namespace CalendarApp.UnitTests
         {
             username = "Test Username";
             secondWindow = new SecondWindow(username);
+        }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void GetSecondUserAppointmentsWhenNull()
+        {
+            var appointments = SecondWindow.GetSecondUserAppointments();
+
+            bool result = appointments.IsNullOrEmpty();
+
+            Assert.IsTrue(result);
         }
 
         [Test, Apartment(ApartmentState.STA)]

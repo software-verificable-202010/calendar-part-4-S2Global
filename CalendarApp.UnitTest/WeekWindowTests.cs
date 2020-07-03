@@ -43,6 +43,22 @@ namespace CalendarApp.UnitTests
 
             Assert.AreEqual(mainTitle, title.ToString());
         }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void UpdateDayNumbersReturnsList()
+        {
+            List<TextBlock> numbers = weekWindow.UpdateDayNumbers(new DateTime(2020, 2, 2));
+
+            Assert.IsInstanceOf<List<TextBlock>>(numbers);
+        }
+
+        [Test, Apartment(ApartmentState.STA)]
+        public void UpdateTimesReturnsList()
+        {
+            List<TextBlock> times = weekWindow.UpdateTimes();
+
+            Assert.IsInstanceOf<List<TextBlock>>(times);
+        }
         #endregion
     }
 }

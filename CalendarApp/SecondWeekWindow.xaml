@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalendarApp"
         mc:Ignorable="d"
-        Title="SecondWeekWindow" Height="450" Width="800">
+        Title="SecondWeekWindow" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -63,7 +63,6 @@
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Fill="Khaki"/>
                     <TextBlock Text="11" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                     <TextBlock Text="12" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
                     <TextBlock Text="13" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>

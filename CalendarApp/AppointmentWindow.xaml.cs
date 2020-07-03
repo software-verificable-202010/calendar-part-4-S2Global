@@ -45,9 +45,9 @@ namespace CalendarApp
             }
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public void UpdateText(List<TextBlock> appointmentParameters, Appointment appointment)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             if (appointmentParameters != null && appointment != null)
             {
@@ -73,9 +73,9 @@ namespace CalendarApp
             }
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public void UpdateFontSize(List<TextBlock> appointmentParameters)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             int fontSize = 16;
             if (appointmentParameters != null)
@@ -87,9 +87,9 @@ namespace CalendarApp
             }
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public void UpdateRowPosition(List<TextBlock> appointmentParameters)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             if (appointmentParameters != null)
             {
@@ -109,9 +109,9 @@ namespace CalendarApp
             }  
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public void UpdateColumnPosition(List<TextBlock> appointmentParameters)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             if (appointmentParameters != null)
             {

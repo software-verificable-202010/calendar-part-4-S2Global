@@ -126,9 +126,9 @@ namespace CalendarApp
             }
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public Rectangle UpdateWeekendRectangle()
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             int weekendRowProperty = 0;
             int weekendColumnProperty = 5;
@@ -237,9 +237,9 @@ namespace CalendarApp
             }
         }
 
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+#pragma warning disable CA1822 // Mark members as static.
         public string UpdateTitle(DateTime date, string username)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+#pragma warning restore CA1822 // Mark members as static.
         {
             StringBuilder title = new StringBuilder();
             string separator = " - ";
