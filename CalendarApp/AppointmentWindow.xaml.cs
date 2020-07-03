@@ -123,7 +123,7 @@ namespace CalendarApp
             }
         }
 
-        public void GoToAppointmentForm(object sender, RoutedEventArgs e)
+        private void GoToAppointmentForm(object sender, RoutedEventArgs e)
         {
             if (sender != null)
             {

@@ -62,24 +62,7 @@ namespace CalendarApp
             GoToWeek();
         }
 
-        public void ReloadWindow(object sender, RoutedEventArgs e)
-        {
-            weekView.Close();
-            MainWindow mainWindow = new MainWindow(SessionUser, SecondWindowIsOpen);
-            mainWindow.UpdateMainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        public void SecondWindow(object sender, RoutedEventArgs e)
-        {
-            SecondSignInWindow secondSignInWindow = new SecondSignInWindow();
-            secondSignInWindow.Show();
-            SecondWindowIsOpen = true;
-            secondWindow.IsEnabled = !SecondWindowIsOpen;
-        }
-
-        public void UpdateCalendar()
+        private void UpdateCalendar()
         {
             MonthView.Children.Clear();
             MainTitle.Text = UpdateTitle(CalendarDate, SessionUser);
@@ -89,7 +72,44 @@ namespace CalendarApp
             UpdateDayButtons();
         }
 
-        public void GetAppointments()
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public Rectangle UpdateWeekendRectangle()
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+        {
+            int weekendRowProperty = 0;
+            int weekendColumnProperty = 5;
+            int weekendRowSpanProperty = 6;
+            int weekendColumnSpanProperty = 2;
+            Rectangle weekendHighlight = new Rectangle();
+            weekendHighlight.SetValue(Grid.RowProperty, weekendRowProperty);
+            weekendHighlight.SetValue(Grid.ColumnProperty, weekendColumnProperty);
+            weekendHighlight.SetValue(Grid.RowSpanProperty, weekendRowSpanProperty);
+            weekendHighlight.SetValue(Grid.ColumnSpanProperty, weekendColumnSpanProperty);
+            SolidColorBrush rectangleColourFill = new SolidColorBrush
+            {
+                Color = Color.FromArgb(100, 127, 255, 212)
+            };
+            weekendHighlight.SetValue(Shape.FillProperty, rectangleColourFill);
+            return weekendHighlight;
+        }
+
+#pragma warning disable CA1822 // Member cannot be static for testing purposes.
+        public string UpdateTitle(DateTime date, string username)
+#pragma warning restore CA1822 // Member cannot be static for testing purposes.
+        {
+            StringBuilder title = new StringBuilder();
+            string separator = " - ";
+            string userNameField = "User: ";
+            title.Append(date.Month.ToString(CultureInfo.InvariantCulture));
+            title.Append(separator);
+            title.Append(date.Year);
+            title.Append(separator);
+            title.Append(userNameField);
+            title.Append(username);
+            return title.ToString();
+        }
+
+        private void GetAppointments()
         {
 
             string jsonAppointments = null;
@@ -107,6 +127,23 @@ namespace CalendarApp
                 List<Appointment> allAppointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonAppointments);
                 SetSessionUserAppointments(allAppointments.Where(x => x.Participants.Contains(SessionUser)).ToList());
             }
+        }
+
+        private void SecondWindow(object sender, RoutedEventArgs e)
+        {
+            SecondSignInWindow secondSignInWindow = new SecondSignInWindow();
+            secondSignInWindow.Show();
+            SecondWindowIsOpen = true;
+            secondWindow.IsEnabled = !SecondWindowIsOpen;
+        }
+
+        private void ReloadWindow(object sender, RoutedEventArgs e)
+        {
+            weekView.Close();
+            MainWindow mainWindow = new MainWindow(SessionUser, SecondWindowIsOpen);
+            mainWindow.UpdateMainWindow();
+            mainWindow.Show();
+            this.Close();
         }
 
         private void NextClick(object sender, RoutedEventArgs e)
@@ -149,27 +186,6 @@ namespace CalendarApp
         {
             var AppointmentFormView = new AppointmentForm(false, null);
             AppointmentFormView.Show();
-        }
-
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
-        public Rectangle UpdateWeekendRectangle()
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
-        {
-            int weekendRowProperty = 0;
-            int weekendColumnProperty = 5;
-            int weekendRowSpanProperty = 6;
-            int weekendColumnSpanProperty = 2;
-            Rectangle weekendHighlight = new Rectangle();
-            weekendHighlight.SetValue(Grid.RowProperty, weekendRowProperty);
-            weekendHighlight.SetValue(Grid.ColumnProperty, weekendColumnProperty);
-            weekendHighlight.SetValue(Grid.RowSpanProperty, weekendRowSpanProperty);
-            weekendHighlight.SetValue(Grid.ColumnSpanProperty, weekendColumnSpanProperty);
-            SolidColorBrush rectangleColourFill = new SolidColorBrush
-            {
-                Color = Color.FromArgb(100, 127, 255, 212)
-            };
-            weekendHighlight.SetValue(Shape.FillProperty, rectangleColourFill);
-            return weekendHighlight;
         }
 
         private void UpdateDayNumbers()
@@ -260,22 +276,6 @@ namespace CalendarApp
                 }
                 day++;
             }
-        }
-
-#pragma warning disable CA1822 // Member cannot be static for testing purposes.
-        public string UpdateTitle(DateTime date, string username)
-#pragma warning restore CA1822 // Member cannot be static for testing purposes.
-        {
-            StringBuilder title = new StringBuilder();
-            string separator = " - ";
-            string userNameField = "User: ";
-            title.Append(date.Month.ToString(CultureInfo.InvariantCulture));
-            title.Append(separator);
-            title.Append(date.Year);
-            title.Append(separator);
-            title.Append(userNameField);
-            title.Append(username);
-            return title.ToString();
         }
         #endregion
     }

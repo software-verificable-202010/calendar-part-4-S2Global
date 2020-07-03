@@ -60,7 +60,7 @@ namespace CalendarApp
             GoToWeek();
         }
 
-        public void UpdateCalendar()
+        private void UpdateCalendar()
         {
             MonthView.Children.Clear();
             MainTitle.Text = UpdateTitle(CalendarDate, SecondUser);
@@ -70,7 +70,7 @@ namespace CalendarApp
             UpdateDayButtons();
         }
 
-        public void GetAppointments()
+        private void GetAppointments()
         {
 
             string jsonAppointments = null;
