@@ -85,7 +85,7 @@ namespace CalendarApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CalendarApp;component/secondwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CalendarApp;V1.0.0.0;component/secondwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SecondWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
